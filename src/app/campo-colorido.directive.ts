@@ -5,6 +5,8 @@ import { Directive, HostListener, HostBinding } from '@angular/core';
 })
 export class CampoColoridoDirective {
 
+  @Input('appCampoColorido') cor = 'gray';
+
   @HostBinding('style.backgroundColor') corDeFundo: string;
 
   @HostListener('focus') aoGanharFoco() {

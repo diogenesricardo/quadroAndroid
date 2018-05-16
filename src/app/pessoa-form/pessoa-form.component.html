@@ -4,7 +4,8 @@
 
 <div class="form-group">
   <label>Nome</label>
-  <input type="text" class="form-control"  (focus)="adicionado = false" #nomeInput appCampoColorido>
+  <input type="text" class="form-control" [(ngModel)]="nome"
+        (focus)="adicionado = false" [appCampoColorido]="'yellow'">
 </div>
 
 <button type="button" class="btn btn-primary"
