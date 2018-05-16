@@ -13,8 +13,7 @@ import { CampoColoridoDirective } from './campo-colorido.directive';
     AppComponent,
     CartaoPessoaComponent,
     PessoaFormComponent,
-    CampoColoridoDirective,
-    
+    CampoColoridoDirective
   ],
   imports: [
     BrowserModule
