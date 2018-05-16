@@ -16,7 +16,7 @@ export class PessoaFormComponent {
   adicionar(nome: string) {
     this.nome = nome;
     this.adicionado = true;
-    
+
     this.funcionarios.push({
       id: this.id++,
       nome : this.nome
