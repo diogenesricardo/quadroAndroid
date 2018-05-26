@@ -5,12 +5,13 @@
 <div class="form-group">
   <label>Nome</label>
   <input type="text" class="form-control"
-      (focus)="adicionado = false" [appCampoColorido]="'yellow'"
-      #campo="campoColorido">
+      (focus)="adicionado = false" [appCampoColorido]
+      #campo="campoColorido" name="nome" #nome>
+
 </div>
 
 <button type="button" class="btn btn-primary"
-  (click)="adicionar()" [disabled]="nome.length == 0">Adicionar</button>
+  (click)="adicionar(nome.value)" [disabled]="nome.length == 0">Adicionar</button>
 
-<button class="btn btn-info" (click)="campo.colorir()">Colorir</button>
-<button class="btn btn-info" (click)="campo.descolorir()">Descolorir</button>
+<!-- <button class="btn btn-info" (click)="campo.colorir()">Colorir</button>
+<button class="btn btn-info" (click)="campo.descolorir()">Descolorir</button> -->
