@@ -1,4 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { PessoaService } from './pessoa.service';
+
 
 @Component({
   selector: 'app-pessoa-form',
@@ -7,23 +9,14 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class PessoaFormComponent {
 
-  nome = 'Diogenes';
-  adicionado = false;
-  funcionarios = [];
-  id = 0;
-  @Output() enviarPessoa = new EventEmitter();
+  pessoaService: PessoaService;
+
+  constructor() {
+    this.pessoaService = new PessoaService();
+  }
 
   adicionar(nome: string) {
-    this.nome = nome;
-    this.adicionado = true;
-
-    this.funcionarios.push({
-      id: this.id++,
-      nome : this.nome
-    });
-
-    this.enviarPessoa.emit(this.funcionarios);
-
+    this.pessoaService.adicionar(nome);
   }
 
 }

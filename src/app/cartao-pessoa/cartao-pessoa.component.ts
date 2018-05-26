@@ -1,20 +1,31 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { PessoaService } from '../pessoa-form/pessoa.service';
 
 @Component({
   selector: 'app-cartao-pessoa',
   templateUrl: './cartao-pessoa.component.html',
   styleUrls: ['./cartao-pessoa.component.css']
 })
-export class CartaoPessoaComponent {
+export class CartaoPessoaComponent implements OnInit {
 
   @Input() funcionarios = [];
 
-  getEstilosCartao(funcionario) {
+  pessoaService: PessoaService;
+
+  getEstilosCartao(pessoa) {
       return {
-       'border-width.px': funcionario.id,
-       backgroundColor: funcionario.id % 2 === 0
+       'border-width.px': pessoa.id,
+       backgroundColor: pessoa.id % 2 === 0
          ? 'LightPink' : 'LightSkyBlue 	'
     };
+  }
+
+  constructor() {
+    this.pessoaService = new PessoaService();
+  }
+
+  ngOnInit() {
+    this.funcionarios = this.pessoaService.consultar();
   }
 
 }
