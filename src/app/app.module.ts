@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { CartaoPessoaComponent } from './cartao-pessoa/cartao-pessoa.component';
 import { PessoaFormComponent } from './pessoa-form/pessoa-form.component';
 import { CampoColoridoDirective } from './campo-colorido.directive';
+import { PessoaService } from './pessoa-form/pessoa.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { CampoColoridoDirective } from './campo-colorido.directive';
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [PessoaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

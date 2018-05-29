@@ -10,8 +10,6 @@ export class CartaoPessoaComponent implements OnInit {
 
   @Input() funcionarios = [];
 
-  pessoaService: PessoaService;
-
   getEstilosCartao(pessoa) {
       return {
        'border-width.px': pessoa.id,
@@ -20,9 +18,7 @@ export class CartaoPessoaComponent implements OnInit {
     };
   }
 
-  constructor() {
-    this.pessoaService = new PessoaService();
-  }
+  constructor(private pessoaService: PessoaService) { }
 
   ngOnInit() {
     this.funcionarios = this.pessoaService.consultar();

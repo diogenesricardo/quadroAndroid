@@ -8,15 +8,8 @@ import { PessoaService } from './pessoa.service';
   styleUrls: ['./pessoa-form.component.css']
 })
 export class PessoaFormComponent {
-
-  pessoaService: PessoaService;
-
-  constructor() {
-    this.pessoaService = new PessoaService();
-  }
-
+  constructor(private pessoaService: PessoaService) { }
   adicionar(nome: string) {
     this.pessoaService.adicionar(nome);
   }
-
 }
