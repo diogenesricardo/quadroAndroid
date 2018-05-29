@@ -1,0 +1,27 @@
+<table class="table" style="margin-top: 20px">
+  <thead>
+    <tr>
+      <th>Código</th>
+      <th>Nome</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let funcionario of funcionarios">
+      <td>{{ funcionario.id }}</td>
+      <td>
+        <div class="input-group">
+          <input type="text" class="form-control" [(ngModel)]="funcionario.nome"> <!-- [(ngModel)]="funcionario.nome" -->
+          <span class="input-group-btn">
+          <!--   <button class="btn btn-primary"
+              (click)="atualizar(funcionario)">Atualizar</button> -->
+          </span>
+        </div>
+      </td>
+      <td>
+        <!-- <button class="btn btn-danger"
+          (click)="excluir(funcionario.id)">Excluir</button> -->
+      </td>
+    </tr>
+  </tbody>
+</table>

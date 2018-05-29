@@ -21,7 +21,7 @@ export class CartaoPessoaComponent implements OnInit {
   constructor(private pessoaService: PessoaService) { }
 
   ngOnInit() {
-    this.funcionarios = this.pessoaService.consultar();
+    /* this.funcionarios = this.pessoaService.consultar(); */
   }
 
 }

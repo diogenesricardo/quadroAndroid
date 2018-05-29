@@ -1,6 +1,9 @@
 <div class="container">
     <app-pessoa-form (enviarPessoa)="funcionarios = $event"></app-pessoa-form>
 
-    <app-cartao-pessoa [funcionarios] = funcionarios></app-cartao-pessoa>
+    <!-- <app-cartao-pessoa [funcionarios] = funcionarios></app-cartao-pessoa> -->
+
+    <app-pessoa-table [funcionarios] = funcionarios></app-pessoa-table>
 </div>
 
+  
