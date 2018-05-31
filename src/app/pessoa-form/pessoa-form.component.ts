@@ -11,6 +11,11 @@ export class PessoaFormComponent {
 
   constructor(private pessoaService: PessoaService) { }
 
+  adicionar(nome) {
+    this.pessoaService.adicionar({nome})
+      .subscribe(response => this.pessoaService.consultar());
+  }
+
   /* adicionar(nome: string) {
     this.pessoaService.adicionar(nome);
   } */

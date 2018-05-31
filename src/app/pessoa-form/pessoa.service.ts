@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import 'rxjs/add/operator/toPromise';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { Observable } from 'rxjs/Observable';
+
 
 
 @Injectable()
@@ -10,6 +11,10 @@ export class PessoaService {
 
   consultar() {
     return this.http.get<Array<any>>('http://localhost:8080/pessoas');
+  }
+
+  adicionar(nome: any): Observable<any> {
+    return this.http.post('http://localhost:8080/pessoas', nome);
   }
 /*   ultimoId = 1;
   funcionarios = [{ id: 1, nome: 'Saulo' }];
