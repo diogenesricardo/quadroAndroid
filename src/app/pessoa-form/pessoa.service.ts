@@ -16,6 +16,10 @@ export class PessoaService {
   adicionar(nome: any): Observable<any> {
     return this.http.post('http://localhost:8080/pessoas', nome);
   }
+
+  excluir(id: number) {
+    return this.http.delete(`http://localhost:8080/pessoas/${id}`);
+  }
 /*   ultimoId = 1;
   funcionarios = [{ id: 1, nome: 'Saulo' }];
 

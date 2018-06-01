@@ -11,7 +11,7 @@
       <td>{{ funcionario.id }}</td>
       <td>
         <div class="input-group">
-          <input type="text" class="form-control" [(ngModel)]="funcionario.nome"> <!-- [(ngModel)]="funcionario.nome" -->
+          <input type="text" class="form-control" [(ngModel)]="funcionario.nome">
           <span class="input-group-btn">
           <!--   <button class="btn btn-primary"
               (click)="atualizar(funcionario)">Atualizar</button> -->
@@ -19,8 +19,8 @@
         </div>
       </td>
       <td>
-        <!-- <button class="btn btn-danger"
-          (click)="excluir(funcionario.id)">Excluir</button> -->
+        <button class="btn btn-danger"
+          (click)="excluir(funcionario.id)">Excluir</button>
       </td>
     </tr>
   </tbody>

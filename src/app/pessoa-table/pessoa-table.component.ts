@@ -13,11 +13,24 @@ export class PessoaTableComponent implements OnInit {
   constructor(private pessoaService: PessoaService) { }
 
   ngOnInit() {
+    this.consultar();
+  }
+
+  excluir(id: number) {
+    console.log(id);
+    this.pessoaService.excluir(id)
+      .subscribe(() => {
+        console.log('excluido com sucesso');
+        this.consultar();
+      });
+  }
+
+  consultar() {
     this.pessoaService.consultar()
-      .subscribe(
-        response => this.funcionarios = response
-        /* response => console.log(response) */
-      );
+    .subscribe(
+      response => this.funcionarios = response
+      /* response => console.log(response) */
+    );
   }
 
 }
