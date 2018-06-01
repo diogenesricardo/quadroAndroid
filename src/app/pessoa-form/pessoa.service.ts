@@ -20,6 +20,10 @@ export class PessoaService {
   excluir(id: number) {
     return this.http.delete(`http://localhost:8080/pessoas/${id}`);
   }
+
+  alterar(funcionario: any): Observable<any> {
+    return this.http.put(`http://localhost:8080/pessoas/${funcionario.id}`, funcionario);
+  }
 /*   ultimoId = 1;
   funcionarios = [{ id: 1, nome: 'Saulo' }];
 

@@ -20,9 +20,19 @@ export class PessoaTableComponent implements OnInit {
     console.log(id);
     this.pessoaService.excluir(id)
       .subscribe(() => {
-        console.log('excluido com sucesso');
+        console.log('Atualizado com sucesso');
         this.consultar();
       });
+  }
+
+  atualizar(funcionario: any) {
+    console.log(funcionario);
+    this.pessoaService.alterar(funcionario).subscribe(
+      () => {
+        console.log('Atualizado com sucesso');
+        this.consultar();
+      }
+    );
   }
 
   consultar() {
